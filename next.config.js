@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+   images: {
+      remotePatterns: [
+         {
+            protocol: "https",
+            hostname: "www.goindiastocks.com",
+            port: "",
+            pathname: "/Content/assets/images/logewithname.png",
+         },
+      ],
+   },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

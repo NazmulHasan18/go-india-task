@@ -1,0 +1,52 @@
+[
+   {
+      "symbol": "AAPL",
+      "price": 3525.3,
+      "percentage_change": 0.3
+   },
+   {
+      "symbol": "GOOGL",
+      "price": 2750.6,
+      "percentage_change": -0.3
+   },
+   {
+      "symbol": "AMZN",
+      "price": 3256.9,
+      "percentage_change": 0.2
+   },
+   {
+      "symbol": "MSFT",
+      "price": 265.4,
+      "percentage_change": 0.1
+   },
+   {
+      "symbol": "TSLA",
+      "price": 690.2,
+      "percentage_change": -0.5
+   },
+   {
+      "symbol": "FB",
+      "price": 355.1,
+      "percentage_change": 0.4
+   },
+   {
+      "symbol": "JPM",
+      "price": 158.9,
+      "percentage_change": -0.2
+   },
+   {
+      "symbol": "NVDA",
+      "price": 875.5,
+      "percentage_change": 0.7
+   },
+   {
+      "symbol": "V",
+      "price": 270.8,
+      "percentage_change": 0.3
+   },
+   {
+      "symbol": "PYPL",
+      "price": 285.6,
+      "percentage_change": -0.4
+   }
+]
