@@ -5,8 +5,10 @@ const nextConfig = {
          {
             protocol: "https",
             hostname: "www.goindiastocks.com",
-            port: "",
-            pathname: "/Content/assets/images/logewithname.png",
+         },
+         {
+            protocol: "https",
+            hostname: "i.ibb.co",
          },
       ],
    },

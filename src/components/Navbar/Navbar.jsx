@@ -70,7 +70,7 @@ const Navbar = () => {
                </div>
             ))}
          </Marquee>
-         <h2 className="text-red-500 text-3xl font-semibold">Feature Companies</h2>
+         <h2 className="text-red-500 text-3xl pl-5 font-semibold">Feature Companies</h2>
          <Marquee className="bg-sky-100">
             <div className="flex gap-10 py-4 mr-4 justify-center items-center">
                <Image src={image1} alt="brand" width={100} height={100} />

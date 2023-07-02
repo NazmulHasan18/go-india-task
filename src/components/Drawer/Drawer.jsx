@@ -33,7 +33,7 @@ const Drawer = ({ handleToggle, isOpen }) => {
                      onClick={() => setDropdown(!dropdown)}
                   >
                      <BiSolidMessageDetail className="text-2xl" />{" "}
-                     <span className="flex-grow font-semibold">Disscussion Fourm</span>{" "}
+                     <span className="flex-grow font-semibold">Discussion Fourm</span>{" "}
                      <FaCaretDown className={`${dropdown && "rotate-180"} duration-300`}></FaCaretDown>
                   </p>
                   <ul className={`${!dropdown && "scale-0"} font-semibold duration-300`}>

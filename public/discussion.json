@@ -1,0 +1,192 @@
+[
+   {
+      "author": {
+         "name": "John Doe",
+         "email": "john.doe@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "This is a great day to share some JSON data! I love working with JSON and exploring its possibilities. Let's dive into the world of data together!",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 100,
+         "comment": 25,
+         "share": 10
+      },
+      "sector": "sector1",
+      "posting_date": "2023-06-30",
+      "posting_time": "10:45:20"
+   },
+   {
+      "author": {
+         "name": "Jane Smith",
+         "email": "jane.smith@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Check out this amazing recipe I just made! It's a mouthwatering combination of flavors and textures. You don't want to miss it!",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 200,
+         "comment": 50,
+         "share": 20
+      },
+      "sector": "sector2",
+      "posting_date": "2023-06-30",
+      "posting_time": "14:20:05"
+   },
+   {
+      "author": {
+         "name": "David Johnson",
+         "email": "david.johnson@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Exploring the wonders of nature! Witnessing breathtaking landscapes and capturing unforgettable moments in the wild is truly an incredible experience.",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 150,
+         "comment": 30,
+         "share": 15
+      },
+      "sector": "sector3",
+      "posting_date": "2023-06-30",
+      "posting_time": "16:55:10"
+   },
+   {
+      "author": {
+         "name": "Emily Davis",
+         "email": "emily.davis@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "New fashion trends for the summer! Stay stylish and comfortable with the latest clothing and accessories. Get ready to rock your summer looks!",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 300,
+         "comment": 75,
+         "share": 30
+      },
+      "sector": "sector1",
+      "posting_date": "2023-06-30",
+      "posting_time": "09:15:45"
+   },
+   {
+      "author": {
+         "name": "Michael Wilson",
+         "email": "michael.wilson@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Tips and tricks for a productive workday! Boost your efficiency and achieve more in less time with these practical strategies and techniques.",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 250,
+         "comment": 60,
+         "share": 25
+      },
+      "sector": "sector2",
+      "posting_date": "2023-06-30",
+      "posting_time": "11:30:55"
+   },
+   {
+      "author": {
+         "name": "Sarah Thompson",
+         "email": "sarah.thompson@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Unboxing the latest gadgets! Join me in discovering the cutting-edge features and innovative designs of the hottest tech gadgets in the market.",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 180,
+         "comment": 40,
+         "share": 15
+      },
+      "sector": "sector3",
+      "posting_date": "2023-06-30",
+      "posting_time": "13:10:20"
+   },
+   {
+      "author": {
+         "name": "Robert Brown",
+         "email": "robert.brown@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Delicious and healthy smoothie recipes! Start your day with a nutritious and refreshing blend of fruits and vegetables. Your body will thank you!",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 120,
+         "comment": 20,
+         "share": 5
+      },
+      "sector": "sector1",
+      "posting_date": "2023-06-30",
+      "posting_time": "17:45:30"
+   },
+   {
+      "author": {
+         "name": "Jennifer Lee",
+         "email": "jennifer.lee@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Discovering new hiking trails! Get ready for an adventure-filled journey as we explore stunning trails and breathtaking views in the great outdoors.",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 90,
+         "comment": 15,
+         "share": 8
+      },
+      "sector": "sector2",
+      "posting_date": "2023-06-30",
+      "posting_time": "19:05:15"
+   },
+   {
+      "author": {
+         "name": "Mark Taylor",
+         "email": "mark.taylor@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Creating beautiful art with watercolors! Dive into the world of colors and express your creativity with the mesmerizing medium of watercolor painting.",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 140,
+         "comment": 35,
+         "share": 12
+      },
+      "sector": "sector3",
+      "posting_date": "2023-06-30",
+      "posting_time": "21:30:40"
+   },
+   {
+      "author": {
+         "name": "Laura Adams",
+         "email": "laura.adams@example.com",
+         "image": "https://i.ibb.co/bvJDb7H/nazmul2.png"
+      },
+      "post": {
+         "content": "Exploring the latest advancements in AI! Join me in unraveling the mysteries of artificial intelligence and its impact on various industries.",
+         "image_url": "https://i.ibb.co/g3TCrSg/class1.jpg"
+      },
+      "metrics": {
+         "like": 220,
+         "comment": 45,
+         "share": 18
+      },
+      "sector": "sector1",
+      "posting_date": "2023-06-30",
+      "posting_time": "22:15:55"
+   }
+]
