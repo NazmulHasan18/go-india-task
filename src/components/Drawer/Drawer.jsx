@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { FaBell, FaCaretDown, FaCaretRight, FaUser } from "react-icons/fa";
 import { BiSolidMessageDetail, BiSolidDollarCircle } from "react-icons/bi";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Drawer = ({ handleToggle, isOpen }) => {
+   const pathname = usePathname();
+   console.log(pathname);
    const [dropdown, setDropdown] = useState(false);
 
    const linkItems = [
@@ -16,9 +19,9 @@ const Drawer = ({ handleToggle, isOpen }) => {
       { link: "News/Interview", href: "news/interview" },
    ];
    return (
-      <div className="sticky top-0 w-full bg-slate-800 bg-opacity-25">
+      <div className="sticky top-0 z-50 w-full bg-slate-800 bg-opacity-25">
          <div
-            className={`min-h-[calc(100vh-250px)] bg-blue-950 ${
+            className={`min-h-screen bg-blue-950 ${
                isOpen ? "w-80" : "w-0"
             } absolute lg:relative duration-300`}
          >
@@ -29,7 +32,9 @@ const Drawer = ({ handleToggle, isOpen }) => {
                </h3>
                <div className="text-white">
                   <p
-                     className="text-xl flex gap-4 items-center justify-center cursor-pointer px-4 py-2 mt-4"
+                     className={`text-xl flex gap-4 items-center justify-center cursor-pointer px-4 py-2 mt-4 ${
+                        dropdown && "bg-[#11113d]"
+                     }`}
                      onClick={() => setDropdown(!dropdown)}
                   >
                      <BiSolidMessageDetail className="text-2xl" />{" "}
@@ -40,14 +45,19 @@ const Drawer = ({ handleToggle, isOpen }) => {
                      <li>
                         <Link
                            href="market_stories"
-                           className="text-xl flex font-semibold gap-4 items-center cursor-pointer px-4 py-2"
+                           className={`text-xl flex font-semibold gap-4 items-center cursor-pointer px-4 py-2 ${
+                              pathname === "market_stories" && "bg-[#11113d]"
+                           }`}
                         >
                            <BiSolidDollarCircle className="text-2xl" /> Market Stories
                         </Link>
                      </li>
                      {linkItems.map((item, index) => (
                         <li key={index} className="mb-4 pl-14">
-                           <Link href={item.href} className="text-xl">
+                           <Link
+                              href={item.href}
+                              className={`text-xl ${pathname === item.href && "bg-[#11113d]"}`}
+                           >
                               {item.link}
                            </Link>
                         </li>

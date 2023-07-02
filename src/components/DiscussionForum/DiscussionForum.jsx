@@ -38,9 +38,9 @@ const DiscussionForum = () => {
    };
 
    return (
-      <div className="mt-5 overflow-y-auto max-h-[calc(100vh-480px)] scroll-bar">
+      <div className="mt-5 lg:overflow-y-auto lg:max-h-[calc(100vh-200px)] scroll-bar lg:pr-4">
          {discussions.map((discussion, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg mb-5 mr-4">
+            <div key={index} className="bg-white rounded-lg shadow-lg mb-5">
                <p className="text-right p-4 text-blue-600 font-semibold">
                   {calculatePostingTime(discussion.posting_date, discussion.posting_time)}{" "}
                </p>
@@ -51,7 +51,7 @@ const DiscussionForum = () => {
                   height={200}
                   className="h-auto w-auto mx-auto"
                ></Image>
-               <div className="flex gap-6 items-center px-8 py-4">
+               <div className="flex gap-6 items-center px-1 lg:px-8 py-4">
                   <Image
                      src={discussion.author.image}
                      alt=""
@@ -59,7 +59,7 @@ const DiscussionForum = () => {
                      height={60}
                      className="h-16 w-16 object-cover rounded-full"
                   />
-                  <h3 className="text-2xl font-bold">{discussion.author.name}</h3>
+                  <h3 className="text-xl lg:text-2xl font-bold">{discussion.author.name}</h3>
                   <p
                      className={`text-white py-1 px-4 rounded-full ${
                         discussion.sector === "sector1"
@@ -76,11 +76,11 @@ const DiscussionForum = () => {
                         : "Sector 3"}
                   </p>
                </div>
-               <p className="px-20 py-3">{discussion.post.content}</p>
+               <p className="px-6 lg:px-20 py-3">{discussion.post.content}</p>
                <div className="flex justify-around items-center py-4">
-                  <p className="flex items-center gap-4">
+                  <p className="flex items-center gap-2 lg:gap-4">
                      <FaHeart
-                        className={`text-2xl cursor-pointer`}
+                        className={`lg:text-2xl cursor-pointer`}
                         id={index}
                         onClick={() => {
                            const element = document.getElementById(`${index}`).classList;
@@ -97,14 +97,14 @@ const DiscussionForum = () => {
                      {discussion.metrics.like + click}
                   </p>
 
-                  <p className="flex items-center gap-4">
-                     <FaEye className="text-2xl" /> {discussion.metrics.share}
+                  <p className="flex items-center gap-2 lg:gap-4">
+                     <FaEye className="lg:text-2xl" /> {discussion.metrics.share}
                   </p>
-                  <p className="flex items-center gap-4">
-                     <FaRegCommentAlt className="text-2xl" /> {discussion.metrics.comment} Comments
+                  <p className="flex items-center gap-2 lg:gap-4">
+                     <FaRegCommentAlt className="lg:text-2xl" /> {discussion.metrics.comment} Comments
                   </p>
-                  <p className="flex items-center gap-4">
-                     <FaShareAlt className="text-2xl" /> Share
+                  <p className="flex items-center gap-2 lg:gap-4">
+                     <FaShareAlt className="lg:text-2xl" /> Share
                   </p>
                </div>
             </div>

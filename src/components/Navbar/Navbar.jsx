@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import React from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaUserCircle, FaSearch } from "react-icons/fa";
 import Link from "next/link";
 import image1 from "@/assets/brand/Brand1.jpg";
 import image2 from "@/assets/brand/Brand2.png";
@@ -20,12 +20,17 @@ import image12 from "@/assets/brand/Brand12.jpg";
 
 const Navbar = () => {
    const [stocks, setStocks] = useState([]);
+   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
    useEffect(() => {
       fetch("./stocks.json")
          .then((res) => res.json())
          .then((data) => setStocks(data));
    }, []);
+
+   const handleDropdownToggle = () => {
+      setIsDropdownOpen(!isDropdownOpen);
+   };
 
    return (
       <>
@@ -49,7 +54,29 @@ const Navbar = () => {
                   <FaSearch className="absolute right-2 text-xl top-3 cursor-pointer" />
                </div>
             </div>
-            <div className="flex justify-center gap-4 items-center">
+            <div className="flex items-center ">
+               <div className="relative">
+                  <button
+                     className="py-2 px-4 border-0 text-gray-800 rounded-md hover:bg-slate-100 hover:border-gray-100"
+                     onClick={handleDropdownToggle}
+                  >
+                     <FaUserCircle className="text-xl" />
+                  </button>
+
+                  {isDropdownOpen && (
+                     <div className="absolute top-10 lg:hidden right-0 text-white border border-gray-500 rounded-md p-2 z-50 w-40 text-center space-y-4 bg-blue-600">
+                        <Link href="https://www.goindiastocks.com/GIA/Contactus">Contact Us</Link>
+                        <button className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black">
+                           Sign Up
+                        </button>
+                        <button className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black">
+                           Sign In
+                        </button>
+                     </div>
+                  )}
+               </div>
+            </div>
+            <div className="hidden lg:flex justify-center gap-4 items-center">
                <Link href="https://www.goindiastocks.com/GIA/Contactus">Contact Us</Link>
                <button className="py-2 px-4 border-2 border-gray-500 rounded-md hover:bg-slate-100 hover:border-gray-100">
                   Sign Up
@@ -70,7 +97,7 @@ const Navbar = () => {
                </div>
             ))}
          </Marquee>
-         <h2 className="text-red-500 text-3xl pl-5 font-semibold">Feature Companies</h2>
+         <h2 className="text-red-500 text-3xl pl-5 hidden lg:block font-semibold">Feature Companies</h2>
          <Marquee className="bg-sky-100">
             <div className="flex gap-10 py-4 mr-4 justify-center items-center">
                <Image src={image1} alt="brand" width={100} height={100} />
