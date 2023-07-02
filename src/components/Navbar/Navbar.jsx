@@ -34,17 +34,16 @@ const Navbar = () => {
 
    return (
       <>
-         <nav className="flex p-5 gap-6 bg-white">
+         <nav className="flex p-5 gap-6 items-center bg-white h-28">
             <Image
                src="https://www.goindiastocks.com/Content/assets/images/logewithname.png"
                alt=""
                width={130}
                height={70}
-               className="w-auto h-auto"
             />
 
             <div className="flex-grow mr-8">
-               <div className="relative max-w-xl">
+               <div className="relative max-w-4xl">
                   <input
                      type="text"
                      className="w-full py-2 px-5 shadow-[inset_0_5px_5px_0_#2422225b] rounded-lg bg-[#3b383823] outline-none focus:border-2 border-gray-500 "
@@ -100,18 +99,18 @@ const Navbar = () => {
          <h2 className="text-red-500 text-3xl pl-5 hidden lg:block font-semibold">Feature Companies</h2>
          <Marquee className="bg-sky-100">
             <div className="flex gap-10 py-4 mr-4 justify-center items-center">
-               <Image src={image1} alt="brand" width={100} height={100} />
-               <Image src={image2} alt="brand" width={100} height={100} />
-               <Image src={image3} alt="brand" width={100} height={100} />
-               <Image src={image4} alt="brand" width={100} height={100} />
-               <Image src={image5} alt="brand" width={100} height={100} />
-               <Image src={image6} alt="brand" width={100} height={100} />
-               <Image src={image7} alt="brand" width={100} height={100} />
-               <Image src={image8} alt="brand" width={100} height={100} />
-               <Image src={image9} alt="brand" width={100} height={100} />
-               <Image src={image10} alt="brand" width={100} height={100} />
-               <Image src={image11} alt="brand" width={100} height={100} />
-               <Image src={image12} alt="brand" width={100} height={100} />
+               <Image src={image1} alt="brand" width={150} height={100} />
+               <Image src={image2} alt="brand" width={150} height={100} />
+               <Image src={image3} alt="brand" width={150} height={100} />
+               <Image src={image4} alt="brand" width={150} height={100} />
+               <Image src={image5} alt="brand" width={150} height={100} />
+               <Image src={image6} alt="brand" width={150} height={100} />
+               <Image src={image7} alt="brand" width={150} height={100} />
+               <Image src={image8} alt="brand" width={150} height={100} />
+               <Image src={image9} alt="brand" width={150} height={100} />
+               <Image src={image10} alt="brand" width={150} height={100} />
+               <Image src={image11} alt="brand" width={150} height={100} />
+               <Image src={image12} alt="brand" width={150} height={100} />
             </div>
          </Marquee>
       </>
