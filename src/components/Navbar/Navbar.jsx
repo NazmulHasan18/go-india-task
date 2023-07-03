@@ -85,7 +85,7 @@ const Navbar = () => {
                   </button>
 
                   {isDropdownOpen && (
-                     <div className="absolute top-10 lg:hidden right-0 text-white border border-gray-500 rounded-md p-2 z-50 w-40 text-center space-y-4 bg-blue-600">
+                     <div className="absolute top-10 lg:hidden right-0 text-white border border-gray-500 rounded-md p-4 z-50 w-40 text-center space-y-4 bg-blue-950">
                         <Link href="https://www.goindiastocks.com/GIA/Contactus">Contact Us</Link>
                         <button
                            className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black"

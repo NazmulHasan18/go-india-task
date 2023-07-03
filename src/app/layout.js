@@ -1,7 +1,11 @@
+"use client";
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import BottomNav from "@/components/BottomNav/BottomNav";
+import { FaPlus } from "react-icons/fa";
+import PostModal from "@/components/PostModal/PostModal";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,6 +15,18 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+   const handleModalOpen = () => {
+      document.getElementById("root").classList.add("overflow-hidden");
+      setIsModalOpen(true);
+   };
+
+   const handleModalClose = () => {
+      document.getElementById("root").classList.remove("overflow-hidden");
+      setIsModalOpen(false);
+   };
+
    return (
       <html lang="en">
          <body className={`${inter.className} over bg-gray-100 relative`} id="root">
@@ -19,6 +35,16 @@ export default function RootLayout({ children }) {
             </header>
             {children}
             <BottomNav></BottomNav>
+            <div
+               className="lg:p-5 p-3 lg:text-2xl text-xl rounded-full bg-blue-950 text-white fixed w-11 lg:w-16 bottom-20 lg:bottom-10 flex right-10"
+               onClick={handleModalOpen}
+            >
+               <p>
+                  <FaPlus />
+               </p>
+            </div>
+
+            <PostModal isOpen={isModalOpen} onClose={handleModalClose}></PostModal>
          </body>
       </html>
    );

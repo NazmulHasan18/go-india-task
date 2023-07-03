@@ -21,19 +21,8 @@ const SignInModal = ({ isOpen, onClose }) => {
       }, 2000);
    };
    if (!isOpen) {
-      console.log(isOpen);
       return null;
    }
-   const customStyles = {
-      content: {
-         top: "50%",
-         left: "50%",
-         right: "auto",
-         bottom: "auto",
-         marginRight: "-50%",
-         transform: "translate(-50%, -50%)",
-      },
-   };
 
    return (
       <div className="bg-black bg-opacity-70 absolute top-0 z-50 flex justify-center items-center w-full h-screen">

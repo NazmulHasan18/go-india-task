@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 const Drawer = ({ handleToggle, isOpen }) => {
    const pathname = usePathname();
-   console.log(pathname);
+
    const [dropdown, setDropdown] = useState(false);
 
    const linkItems = [

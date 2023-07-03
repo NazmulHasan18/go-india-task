@@ -1,19 +1,46 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import DiscussionForum from "../DiscussionForum/DiscussionForum";
 
 const MainContentNav = () => {
+   const [discussions, setDiscussions] = useState([]);
+   const [filteredDiscussions, setFilteredDiscussions] = useState([]);
+
+   useEffect(() => {
+      fetch("./discussion.json")
+         .then((res) => res.json())
+         .then((data) => {
+            setDiscussions(data);
+            setFilteredDiscussions(data);
+         });
+   }, []);
+
+   const handelFilterDiscussions = (sector) => {
+      const filter = discussions.filter((discussion) => discussion.sector === sector);
+      setFilteredDiscussions(filter);
+   };
+
    return (
       <div className="w-full">
          <h4 className="text-2xl font-semibold mb-4">Filters</h4>
          <nav className="flex justify-between items-center w-full p-5 gap-2 lg:gap-5 bg-white rounded-lg">
-            <p className="py-1 px-2 lg:px-4  text-[10px] lg:text-base font-semibold bg-red-600 text-white rounded-full">
+            <p
+               className="py-1 px-2 lg:px-4  text-[10px] lg:text-base font-semibold bg-red-600 text-white rounded-full cursor-pointer"
+               onClick={() => handelFilterDiscussions("sector1")}
+            >
                Sector 1
             </p>
-            <p className="py-1  px-2 lg:px-4  text-[10px] lg:text-base font-semibold bg-blue-600 text-white rounded-full">
+            <p
+               className="py-1  px-2 lg:px-4  text-[10px] lg:text-base font-semibold bg-blue-600 text-white rounded-full cursor-pointer"
+               onClick={() => handelFilterDiscussions("sector2")}
+            >
                Sector 2
             </p>
-            <p className="py-1 px-2 lg:px-4  text-[10px] lg:text-base font-semibold bg-yellow-500 text-white rounded-full">
+            <p
+               className="py-1 px-2 lg:px-4  text-[10px] lg:text-base font-semibold bg-yellow-500 text-white rounded-full cursor-pointer"
+               onClick={() => handelFilterDiscussions("sector3")}
+            >
                Sector 3
             </p>
             <div className="relative">
@@ -25,7 +52,7 @@ const MainContentNav = () => {
                />
             </div>
          </nav>
-         <DiscussionForum></DiscussionForum>
+         <DiscussionForum discussions={filteredDiscussions}></DiscussionForum>
       </div>
    );
 };

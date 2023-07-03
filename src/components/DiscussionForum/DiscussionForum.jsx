@@ -4,16 +4,8 @@ import moment from "moment/moment";
 import Image from "next/image";
 import { FaRegHeart, FaHeart, FaRegCommentAlt, FaEye, FaShareAlt } from "react-icons/fa";
 
-const DiscussionForum = () => {
-   const [discussions, setDiscussions] = useState([]);
-
+const DiscussionForum = ({ discussions }) => {
    const [click, setClick] = useState(0);
-
-   useEffect(() => {
-      fetch("./discussion.json")
-         .then((res) => res.json())
-         .then((data) => setDiscussions(data));
-   }, []);
 
    const calculatePostingTime = (postingDate, postingTime) => {
       const postingDateTime = moment(`${postingDate} ${postingTime}`, "YYYY-MM-DD HH:mm:ss");
