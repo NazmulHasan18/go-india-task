@@ -17,10 +17,14 @@ import image9 from "@/assets/brand/Brand9.png";
 import image10 from "@/assets/brand/Brand10.png";
 import image11 from "@/assets/brand/Brand11.jpg";
 import image12 from "@/assets/brand/Brand12.jpg";
+import SignInModal from "@/components/SignInModal/SignInModal";
+import SignUpModal from "../SignUpModal/SignUpModal";
 
 const Navbar = () => {
    const [stocks, setStocks] = useState([]);
    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
    useEffect(() => {
       fetch("./stocks.json")
@@ -30,6 +34,24 @@ const Navbar = () => {
 
    const handleDropdownToggle = () => {
       setIsDropdownOpen(!isDropdownOpen);
+   };
+
+   const handleModalOpen = () => {
+      document.getElementById("root").classList.add("overflow-hidden");
+      setIsModalOpen(true);
+   };
+   const handleSignUpModalOpen = () => {
+      document.getElementById("root").classList.add("overflow-hidden");
+      setIsSignUpModalOpen(true);
+   };
+
+   const handleModalClose = () => {
+      document.getElementById("root").classList.remove("overflow-hidden");
+      setIsModalOpen(false);
+   };
+   const handleSignUpModalClose = () => {
+      document.getElementById("root").classList.remove("overflow-hidden");
+      setIsSignUpModalOpen(false);
    };
 
    return (
@@ -54,7 +76,7 @@ const Navbar = () => {
                </div>
             </div>
             <div className="flex items-center ">
-               <div className="relative">
+               <div className="relative lg:hidden">
                   <button
                      className="py-2 px-4 border-0 text-gray-800 rounded-md hover:bg-slate-100 hover:border-gray-100"
                      onClick={handleDropdownToggle}
@@ -65,10 +87,16 @@ const Navbar = () => {
                   {isDropdownOpen && (
                      <div className="absolute top-10 lg:hidden right-0 text-white border border-gray-500 rounded-md p-2 z-50 w-40 text-center space-y-4 bg-blue-600">
                         <Link href="https://www.goindiastocks.com/GIA/Contactus">Contact Us</Link>
-                        <button className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black">
+                        <button
+                           className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black"
+                           onClick={handleSignUpModalOpen}
+                        >
                            Sign Up
                         </button>
-                        <button className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black">
+                        <button
+                           className="py-2 px-4 border-2 border-white rounded-md hover:bg-slate-100 hover:border-white hover:text-black"
+                           onClick={handleModalOpen}
+                        >
                            Sign In
                         </button>
                      </div>
@@ -77,10 +105,16 @@ const Navbar = () => {
             </div>
             <div className="hidden lg:flex justify-center gap-4 items-center">
                <Link href="https://www.goindiastocks.com/GIA/Contactus">Contact Us</Link>
-               <button className="py-2 px-4 border-2 border-gray-500 rounded-md hover:bg-slate-100 hover:border-gray-100">
+               <button
+                  className="py-2 px-4 border-2 border-gray-500 rounded-md hover:bg-slate-100 hover:border-gray-100"
+                  onClick={handleSignUpModalOpen}
+               >
                   Sign Up
                </button>
-               <button className="py-2 px-4 border-2 border-gray-500 rounded-md hover:bg-slate-100 hover:border-gray-100">
+               <button
+                  className="py-2 px-4 border-2 border-gray-500 rounded-md hover:bg-slate-100 hover:border-gray-100"
+                  onClick={handleModalOpen}
+               >
                   Sign In
                </button>
             </div>
@@ -113,6 +147,8 @@ const Navbar = () => {
                <Image src={image12} alt="brand" width={150} height={100} />
             </div>
          </Marquee>
+         <SignInModal isOpen={isModalOpen} onClose={handleModalClose}></SignInModal>
+         <SignUpModal isOpen={isSignUpModalOpen} onClose={handleSignUpModalClose}></SignUpModal>
       </>
    );
 };
